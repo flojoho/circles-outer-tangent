@@ -34,8 +34,6 @@ const startAnimation = (canvas: HTMLCanvasElement) => {
     x += vx;
     y += vy;
 
-
-    
     const circle1 = new Circle(new Vector(300, 300), 150);
     const circle2 = new Circle(new Vector(x, y), 100);
     const circles = [
@@ -47,9 +45,6 @@ const startAnimation = (canvas: HTMLCanvasElement) => {
     if(circle2.position.y >= canvas.height - circle2.radius) vy = -vy;
     if(circle2.position.x <= circle2.radius) vx = -vx;
     if(circle2.position.y <= circle2.radius) vy = -vy;
-
-
-
 
     const d = circle1.position.to(circle2.position);
     const dSquared = d.lengthSquared();
@@ -68,11 +63,6 @@ const startAnimation = (canvas: HTMLCanvasElement) => {
       circle1.position,
       circle2.position
     ];
-    console.log(offset)
-    
-    
-    
-    
     
     const renderedPoints = points.map(point => {
       return new Point(
